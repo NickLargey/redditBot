@@ -1,9 +1,10 @@
+#config file must be created with username, PW, and reddit app configs
+
 import praw
 import config
 import time
 
 commentList = []
-t = True
 
 def bot_login():
 	print("Logging in")
@@ -24,10 +25,10 @@ def run_bot(r):
 			commentList.append(comment.id)
 			print(commentList)
 		else:
-			t = False
+			print("Done!")
 		
 	time.sleep(10)
 
 r = bot_login()
-while t:
+while True:
 	run_bot(r)
